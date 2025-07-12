@@ -88,11 +88,14 @@ NEXT_PUBLIC_API_URL=http://localhost:4000
 
 ### 4. Настройка Google Sheets API
 
-1. Создайте проект в Google Cloud Console
+1. Создайте проект в [Google Cloud Console](https://console.cloud.google.com/)
 2. Включите Google Sheets API
 3. Создайте Service Account
-4. Скачайте credentials.json
-5. Поделитесь Google Sheet с email сервисного аккаунта
+4. Скачайте credentials.json и переименуйте в `google-credentials.json`
+5. Поместите файл в папку `backend/`
+6. Поделитесь Google Sheet с email сервисного аккаунта
+
+**Важно:** Файл `google-credentials.json` содержит секретные данные и не должен попадать в репозиторий. Он уже добавлен в `.gitignore`.
 
 ### 5. Запуск приложения
 

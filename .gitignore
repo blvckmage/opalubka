@@ -74,6 +74,7 @@ temp/
 # Google Sheets credentials (if stored locally)
 credentials.json
 token.json
+google-credentials.json
 
 # CSV files (if using local storage)
 *.csv 
