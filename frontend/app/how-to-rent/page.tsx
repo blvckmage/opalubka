@@ -13,11 +13,7 @@ export default function HowToRent() {
   const { t, i18n } = useTranslation();
   const lng = i18n.language.startsWith('kz') ? 'kz' : 'ru';
   const steps = t('how.steps', { returnObjects: true }) as string[];
-  const productTypes = [
-    { ru: "Опалубка для колонн", kz: "Бағанаға арналған қалып" },
-    { ru: "Опалубка для перекрытий", kz: "Жабынға арналған қалып" },
-    { ru: "Опалубка для ригелей", kz: "Ригельге арналған қалып" },
-  ];
+  const productTypes = t('howToRent.productTypes', { returnObjects: true }) as string[];
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -95,7 +91,7 @@ export default function HowToRent() {
                 mx: 'auto'
               }}
             >
-              Простой процесс аренды опалубки в 4 шага
+              {t('howToRent.heroDesc')}
             </Typography>
             <Button
               variant="contained"
@@ -126,10 +122,10 @@ export default function HowToRent() {
         <Container maxWidth="lg">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" fontWeight={700} gutterBottom>
-              Путь к успешной аренде
+              {t('howToRent.roadTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              Следуйте по дороге к качественной опалубке
+              {t('howToRent.roadDesc')}
             </Typography>
           </Box>
 
@@ -231,12 +227,6 @@ export default function HowToRent() {
                       <Typography variant="h6" fontWeight={600} gutterBottom>
                         {step}
                       </Typography>
-                      <Typography color="text.secondary" sx={{ fontSize: '0.95rem' }}>
-                        {index === 0 && "Оставьте заявку на сайте или позвоните нам для начала сотрудничества"}
-                        {index === 1 && "Наш специалист свяжется с вами для уточнения деталей и расчета стоимости"}
-                        {index === 2 && "Мы доставим опалубку на ваш объект в удобное время с полным комплектом"}
-                        {index === 3 && "Оплата производится после завершения работ. Никаких предоплат"}
-                      </Typography>
                     </CardContent>
                   </Card>
                 </Box>
@@ -251,10 +241,10 @@ export default function HowToRent() {
         <Container maxWidth="md">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" fontWeight={700} gutterBottom>
-              Оставить заявку
+              {t('howToRent.formTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              Заполните форму ниже, и мы свяжемся с вами в течение 30 минут
+              {t('howToRent.formDesc')}
             </Typography>
           </Box>
 
@@ -292,7 +282,7 @@ export default function HowToRent() {
 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
                   <TextField 
-                    label="Email" 
+                    label={t('howToRent.email')} 
                     name="email" 
                     value={form.email} 
                     onChange={handleChange} 
@@ -311,7 +301,7 @@ export default function HowToRent() {
                     sx={{ flex: 1 }}
                   >
                     {productTypes.map((type) => (
-                      <MenuItem key={type[lng]} value={type[lng]}>{type[lng]}</MenuItem>
+                      <MenuItem key={type} value={type}>{type}</MenuItem>
                     ))}
                   </TextField>
                 </Stack>
@@ -397,10 +387,10 @@ export default function HowToRent() {
         <Container maxWidth="lg">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" fontWeight={700} gutterBottom>
-              Преимущества работы с нами
+              {t('howToRent.benefitsTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              Почему клиенты выбирают QALYP для аренды опалубки
+              {t('howToRent.benefitsDesc')}
             </Typography>
           </Box>
 
@@ -418,10 +408,10 @@ export default function HowToRent() {
                 <AssignmentIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Простая заявка
+                {t('howToRent.benefitSimple')}
               </Typography>
               <Typography color="text.secondary">
-                Оставьте заявку за 2 минуты. Наш специалист свяжется с вами в течение 30 минут
+                {t('howToRent.benefitSimpleDesc')}
               </Typography>
             </Box>
 
@@ -438,10 +428,10 @@ export default function HowToRent() {
                 <LocalShippingIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Быстрая доставка
+                {t('howToRent.benefitFast')}
               </Typography>
               <Typography color="text.secondary">
-                Доставляем опалубку в течение 24 часов по Туркестану и близлежащим районам
+                {t('howToRent.benefitFastDesc')}
               </Typography>
             </Box>
 
@@ -458,10 +448,10 @@ export default function HowToRent() {
                 <PaymentIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Гибкая оплата
+                {t('howToRent.benefitFlexible')}
               </Typography>
               <Typography color="text.secondary">
-                Оплата только за фактическое время использования. Никаких скрытых платежей
+                {t('howToRent.benefitFlexibleDesc')}
               </Typography>
             </Box>
 
@@ -478,10 +468,10 @@ export default function HowToRent() {
                 <SupportAgentIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Техподдержка
+                {t('howToRent.benefitSupport')}
               </Typography>
               <Typography color="text.secondary">
-                Наши специалисты помогут с монтажом и ответят на все вопросы 24/7
+                {t('howToRent.benefitSupportDesc')}
               </Typography>
             </Box>
           </Stack>
@@ -493,10 +483,10 @@ export default function HowToRent() {
         <Container maxWidth="lg">
           <Box textAlign="center">
             <Typography variant="h3" fontWeight={700} gutterBottom color="black">
-              Готовы начать проект?
+              {t('howToRent.ctaTitle')}
             </Typography>
             <Typography variant="h6" color="black" sx={{ mb: 4, opacity: 0.8 }}>
-              Свяжитесь с нами прямо сейчас для получения консультации
+              {t('howToRent.ctaDesc')}
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
               <Button

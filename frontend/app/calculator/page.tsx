@@ -36,7 +36,7 @@ export default function Calculator() {
       setError("Пожалуйста, введите корректные значения.");
       return;
     }
-    let pricePerSqmPerDay = days > 30 ? 250 : 300;
+    let pricePerSqmPerDay = 300;
     const outerPerimeter = 2 * (length + width);
     const outerArea = outerPerimeter * height;
     const outerPrice = outerArea * pricePerSqmPerDay * days;
@@ -93,26 +93,26 @@ export default function Calculator() {
                 mx: 'auto'
               }}
             >
-              Рассчитайте стоимость аренды опалубки для вашего проекта
+              {t('calculator.heroDesc')}
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
-                  от 250₸
+                  {t('calculator.heroPrice')}
                 </Typography>
-                <Typography variant="body1">за м²/день</Typography>
+                <Typography variant="body1">{t('calculator.heroPriceDesc')}</Typography>
               </Box>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
-                  -20%
+                  {t('calculator.heroDiscount')}
                 </Typography>
-                <Typography variant="body1">при аренде от 30 дней</Typography>
+                <Typography variant="body1">{t('calculator.heroDiscountDesc')}</Typography>
               </Box>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
-                  0₸
+                  {t('calculator.heroDelivery')}
                 </Typography>
-                <Typography variant="body1">доставка от 50 м²</Typography>
+                <Typography variant="body1">{t('calculator.heroDeliveryDesc')}</Typography>
               </Box>
             </Box>
           </Box>
@@ -139,7 +139,7 @@ export default function Calculator() {
                     <CalculateIcon />
                   </Avatar>
                   <Typography variant="h4" fontWeight={700}>
-                    Калькулятор стоимости
+                    {t('calculator.formTitle')}
                   </Typography>
                 </Box>
 
@@ -244,7 +244,7 @@ export default function Calculator() {
                 >
                   <CardContent sx={{ p: 4 }}>
                     <Typography variant="h5" fontWeight={700} gutterBottom color="primary.main">
-                      Результат расчета
+                      {t('calculator.resultTitle')}
                     </Typography>
                     
                     <Stack spacing={3}>
@@ -287,7 +287,7 @@ export default function Calculator() {
                           />
                         </Stack>
                         <Typography variant="body2" color="text.secondary">
-                          Тариф: {result.pricePerSqmPerDay} ₸/м²/день
+                          Тариф: 300 ₸/м²/день
                         </Typography>
                       </Box>
                     </Stack>
@@ -344,10 +344,10 @@ export default function Calculator() {
         <Container maxWidth="lg">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" fontWeight={700} gutterBottom>
-              Как работает калькулятор?
+              {t('calculator.infoTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              Простой и точный расчет стоимости аренды опалубки
+              {t('calculator.infoDesc')}
             </Typography>
           </Box>
 
@@ -365,10 +365,10 @@ export default function Calculator() {
                 <CalculateIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Введите размеры
+                {t('calculator.infoStep1')}
               </Typography>
               <Typography color="text.secondary">
-                Укажите длину, ширину, высоту и толщину стен вашего объекта
+                {t('calculator.infoStep1Desc')}
               </Typography>
             </Box>
 
@@ -385,10 +385,10 @@ export default function Calculator() {
                 <InfoIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Получите расчет
+                {t('calculator.infoStep2')}
               </Typography>
               <Typography color="text.secondary">
-                Калькулятор покажет точную стоимость аренды опалубки
+                {t('calculator.infoStep2Desc')}
               </Typography>
             </Box>
 
@@ -405,10 +405,10 @@ export default function Calculator() {
                 <WhatsAppIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Свяжитесь с нами
+                {t('calculator.infoStep3')}
               </Typography>
               <Typography color="text.secondary">
-                Для уточнения деталей и оформления заказа
+                {t('calculator.infoStep3Desc')}
               </Typography>
             </Box>
           </Stack>
@@ -420,10 +420,10 @@ export default function Calculator() {
         <Container maxWidth="lg">
           <Box textAlign="center">
             <Typography variant="h3" fontWeight={700} gutterBottom color="black">
-              Нужна помощь с расчетом?
+              {t('calculator.ctaTitle')}
             </Typography>
             <Typography variant="h6" color="black" sx={{ mb: 4, opacity: 0.8 }}>
-              Наши специалисты помогут рассчитать точную стоимость для вашего проекта
+              {t('calculator.ctaDesc')}
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
               <Button
@@ -445,7 +445,7 @@ export default function Calculator() {
                   }
                 }}
               >
-                Консультация в WhatsApp
+                {t('calculator.ctaWhatsapp')}
               </Button>
               <Button
                 variant="outlined"
@@ -464,7 +464,7 @@ export default function Calculator() {
                   }
                 }}
               >
-                Связаться с нами
+                {t('calculator.ctaContact')}
               </Button>
             </Stack>
           </Box>

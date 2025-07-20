@@ -342,10 +342,10 @@ export default function Home() {
         <Container maxWidth="lg">
           <Box textAlign="center">
             <Typography variant="h3" fontWeight={700} gutterBottom color="black">
-              Готовы начать проект?
+              {t('main.ctaTitle')}
             </Typography>
             <Typography variant="h6" color="black" sx={{ mb: 4, opacity: 0.8 }}>
-              Свяжитесь с нами для получения консультации и расчета стоимости
+              {t('main.ctaDesc')}
             </Typography>
             <Button
               variant="contained"

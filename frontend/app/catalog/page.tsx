@@ -18,8 +18,8 @@ const products = [
       ru: 'Корейская мелкощитовая опалубка для колонн. Размеры от 30см и выше. Высокая прочность, быстрая сборка.',
       kz: 'Бағаналарға арналған корейлік ұсақщитті қалып. 30см және одан жоғары өлшемдер. Жоғары беріктік, тез жинау.',
     },
-    priceDay: 350,
-    priceMonth: 250,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/м²',
     minDays: 3,
     features: ['Размеры от 30см и выше', 'Высокая прочность', 'Быстрая сборка'],
@@ -37,8 +37,8 @@ const products = [
       ru: 'Опалубка для ригелей и балок. Размеры от 30см и выше. Быстрая установка, надёжность.',
       kz: 'Ригельдер мен арқалықтарға арналған қалып. 30см және одан жоғары өлшемдер. Жылдам орнату, сенімділік.',
     },
-    priceDay: 350,
-    priceMonth: 250,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/м²',
     minDays: 3,
     features: ['Размеры от 30см и выше', 'Быстрая установка', 'Надёжность'],
@@ -56,8 +56,8 @@ const products = [
       ru: 'Стеновая опалубка от 30см до 5м высоту со специальными креплениями. Универсальность и надёжность.',
       kz: '30см-ден 5м-ге дейінгі биіктіктегі қабырға қалыбы арнайы бекіткіштермен. Әмбебаптылық және сенімділік.',
     },
-    priceDay: 400,
-    priceMonth: 280,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/м²',
     minDays: 3,
     features: ['Высота от 30см до 5м', 'Специальные крепления', 'Универсальность'],
@@ -75,8 +75,8 @@ const products = [
       ru: 'Монолитные леса от 2м до 4.50м высота. Прочная конструкция, безопасность работ.',
       kz: '2м-ден 4.50м-ге дейінгі биіктіктегі монолитті лестер. Берік құрылыс, жұмыс қауіпсіздігі.',
     },
-    priceDay: 500,
-    priceMonth: 350,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/м²',
     minDays: 3,
     features: ['Высота от 2м до 4.50м', 'Прочная конструкция', 'Безопасность'],
@@ -94,8 +94,8 @@ const products = [
       ru: 'Струбцина (домкраты) от 1.5м до 4.50м. Надёжные крепления для опалубки.',
       kz: '1.5м-ден 4.50м-ге дейінгі струбцина (домкраттар). Қалыптарға арналған сенімді бекіткіштер.',
     },
-    priceDay: 200,
-    priceMonth: 150,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/шт',
     minDays: 3,
     features: ['Длина от 1.5м до 4.50м', 'Надёжные крепления', 'Простота использования'],
@@ -113,8 +113,8 @@ const products = [
       ru: 'Универсальная опалубка для перекрытий. Лёгкая, удобная, заводское качество.',
       kz: 'Жабындарға арналған әмбебап қалып. Жеңіл, ыңғайлы, зауыттық сапа.',
     },
-    priceDay: 350,
-    priceMonth: 250,
+    priceDay: 300,
+    priceMonth: 300,
     unit: 'тг/м²',
     minDays: 3,
     features: ['Универсальность', 'Лёгкость', 'Заводское качество'],
@@ -161,20 +161,20 @@ export default function Catalog() {
                 mx: 'auto'
               }}
             >
-              Профессиональная опалубка для любых строительных задач
+              {t('catalog.heroDesc')}
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
               <Box display="flex" alignItems="center" justifyContent="center">
                 <LocalShippingIcon sx={{ mr: 1, fontSize: 20 }} />
-                <Typography>Быстрая доставка</Typography>
+                <Typography>{t('catalog.featureFast')}</Typography>
               </Box>
               <Box display="flex" alignItems="center" justifyContent="center">
                 <AccessTimeIcon sx={{ mr: 1, fontSize: 20 }} />
-                <Typography>Гибкие сроки аренды</Typography>
+                <Typography>{t('catalog.featureFlexible')}</Typography>
               </Box>
               <Box display="flex" alignItems="center" justifyContent="center">
                 <ConstructionIcon sx={{ mr: 1, fontSize: 20 }} />
-                <Typography>Техническая поддержка</Typography>
+                <Typography>{t('catalog.featureSupport')}</Typography>
               </Box>
             </Stack>
           </Box>
@@ -298,10 +298,10 @@ export default function Catalog() {
         <Container maxWidth="lg">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" fontWeight={700} gutterBottom>
-              Почему выбирают нас?
+              {t('catalog.whyTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              Мы предлагаем лучшие условия аренды опалубки в Туркестане
+              {t('catalog.whyDesc')}
             </Typography>
           </Box>
           
@@ -319,10 +319,10 @@ export default function Catalog() {
                 <LocalShippingIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Быстрая доставка
+                {t('catalog.whyFast')}
               </Typography>
               <Typography color="text.secondary">
-                Доставляем опалубку в течение 24 часов по Туркестану и близлежащим районам
+                {t('catalog.whyFastDesc')}
               </Typography>
             </Box>
             
@@ -339,10 +339,10 @@ export default function Catalog() {
                 <AccessTimeIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Гибкие сроки
+                {t('catalog.whyFlexible')}
               </Typography>
               <Typography color="text.secondary">
-                Арендуйте от 3 дней до нескольких месяцев. Оплата только за фактическое время
+                {t('catalog.whyFlexibleDesc')}
               </Typography>
             </Box>
             
@@ -359,10 +359,10 @@ export default function Catalog() {
                 <ConstructionIcon sx={{ fontSize: 40 }} />
               </Avatar>
               <Typography variant="h5" fontWeight={600} gutterBottom>
-                Техподдержка
+                {t('catalog.whySupport')}
               </Typography>
               <Typography color="text.secondary">
-                Наши специалисты помогут с монтажом и ответят на все вопросы
+                {t('catalog.whySupportDesc')}
               </Typography>
             </Box>
           </Stack>

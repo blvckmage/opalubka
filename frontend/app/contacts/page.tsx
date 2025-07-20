@@ -34,18 +34,6 @@ export default function Contacts() {
             >
               {t('nav.contacts')}
             </Typography>
-            <Typography 
-              variant="h5" 
-              sx={{ 
-                mb: 4,
-                opacity: 0.9,
-                fontWeight: 500,
-                maxWidth: 700,
-                mx: 'auto'
-              }}
-            >
-              Свяжитесь с нами любым удобным способом
-            </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
               <Button
                 variant="contained"
@@ -98,10 +86,10 @@ export default function Contacts() {
             {/* Contact Information */}
             <Box sx={{ flex: 1 }}>
               <Typography variant="h3" fontWeight={700} gutterBottom>
-                Наши контакты
+                {t('contacts.sectionTitle')}
               </Typography>
               <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-                Мы всегда на связи и готовы помочь с вашим проектом
+                {t('contacts.sectionDesc')}
               </Typography>
 
               <Stack spacing={4}>
@@ -120,10 +108,10 @@ export default function Contacts() {
                     </Avatar>
                     <Box>
                       <Typography variant="h6" fontWeight={600}>
-                        Телефон
+                        {t('contacts.phoneTitle')}
                       </Typography>
                       <Typography color="text.secondary">
-                        Звоните в любое время
+                        {t('contacts.phoneDesc')}
                       </Typography>
                     </Box>
                   </Box>
@@ -156,10 +144,10 @@ export default function Contacts() {
                     </Avatar>
                     <Box>
                       <Typography variant="h6" fontWeight={600}>
-                        WhatsApp
+                        {t('contacts.whatsappTitle')}
                       </Typography>
                       <Typography color="text.secondary">
-                        Быстрая связь и консультация
+                        {t('contacts.whatsappDesc')}
                       </Typography>
                     </Box>
                   </Box>
@@ -175,7 +163,7 @@ export default function Contacts() {
                       textTransform: 'none'
                     }}
                   >
-                    Написать в WhatsApp
+                    {t('contacts.whatsappBtn')}
                   </Button>
                 </Card>
 
@@ -194,10 +182,10 @@ export default function Contacts() {
                     </Avatar>
                     <Box>
                       <Typography variant="h6" fontWeight={600}>
-                        Email
+                        {t('contacts.emailTitle')}
                       </Typography>
                       <Typography color="text.secondary">
-                        Для официальных запросов
+                        {t('contacts.emailDesc')}
                       </Typography>
                     </Box>
                   </Box>
@@ -230,10 +218,10 @@ export default function Contacts() {
                     </Avatar>
                     <Box>
                       <Typography variant="h6" fontWeight={600}>
-                        Адрес
+                        {t('contacts.addressTitle')}
                       </Typography>
                       <Typography color="text.secondary">
-                        Наш офис в Туркестане
+                        {t('contacts.addressDesc')}
                       </Typography>
                     </Box>
                   </Box>
@@ -257,17 +245,15 @@ export default function Contacts() {
                     </Avatar>
                     <Box>
                       <Typography variant="h6" fontWeight={600}>
-                        Режим работы
+                        {t('contacts.worktimeTitle')}
                       </Typography>
                       <Typography color="text.secondary">
-                        Мы работаем для вас
+                        {t('contacts.worktimeDesc')}
                       </Typography>
                     </Box>
                   </Box>
                   <Typography sx={{ fontWeight: 500 }}>
-                    Пн-Пт: 8:00 - 18:00<br/>
-                    Сб: 9:00 - 16:00<br/>
-                    Вс: По договоренности
+                    {t('contacts.worktime').split('\n').map((line, i) => <span key={i}>{line}<br/></span>)}
                   </Typography>
                 </Card>
               </Stack>
@@ -316,10 +302,7 @@ export default function Contacts() {
         <Container maxWidth="lg">
           <Box textAlign="center">
             <Typography variant="h3" fontWeight={700} gutterBottom color="black">
-              Нужна консультация?
-            </Typography>
-            <Typography variant="h6" color="black" sx={{ mb: 4, opacity: 0.8 }}>
-              Наши специалисты готовы ответить на все ваши вопросы
+              {t('contacts.ctaDesc')}
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
               <Button
@@ -341,7 +324,7 @@ export default function Contacts() {
                   }
                 }}
               >
-                WhatsApp консультация
+                {t('contacts.ctaWhatsapp')}
               </Button>
               <Button
                 variant="outlined"
@@ -360,7 +343,7 @@ export default function Contacts() {
                   }
                 }}
               >
-                Позвонить сейчас
+                {t('contacts.ctaCall')}
               </Button>
             </Stack>
           </Box>

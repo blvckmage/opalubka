@@ -119,7 +119,7 @@ export default function Gallery() {
                 lineHeight: 1.2
               }}
             >
-              {t('nav.gallery')}
+              {t('gallery.heroTitle')}
             </Typography>
             <Typography 
               variant="h5" 
@@ -131,26 +131,26 @@ export default function Gallery() {
                 mx: 'auto'
               }}
             >
-              Наши реализованные проекты по всей Казахстане
+              {t('gallery.heroDesc')}
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
                   50+
                 </Typography>
-                <Typography variant="body1">Проектов</Typography>
+                <Typography variant="body1">{t('gallery.statsProjects')}</Typography>
               </Box>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
                   15
                 </Typography>
-                <Typography variant="body1">Городов</Typography>
+                <Typography variant="body1">{t('gallery.statsCities')}</Typography>
               </Box>
               <Box textAlign="center">
                 <Typography variant="h4" fontWeight={800} color="black">
                   100000+
                 </Typography>
-                <Typography variant="body1">м² площади</Typography>
+                <Typography variant="body1">{t('gallery.statsArea')}</Typography>
               </Box>
             </Box>
           </Box>
@@ -162,10 +162,10 @@ export default function Gallery() {
         <Container maxWidth="lg">
           <Box textAlign="center" mb={4}>
             <Typography variant="h4" fontWeight={700} gutterBottom>
-              Фильтр по категориям
+              {t('gallery.filterTitle')}
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              Выберите тип проекта для просмотра
+              {t('gallery.filterDesc')}
             </Typography>
           </Box>
 
@@ -181,7 +181,7 @@ export default function Gallery() {
                 <Chip
                   key={category.key}
                   icon={<IconComponent />}
-                  label={category.label[lng]}
+                  label={t(`gallery.category${category.key.charAt(0).toUpperCase() + category.key.slice(1)}`)}
                   onClick={() => setSelectedCategory(category.key)}
                   sx={{
                     bgcolor: selectedCategory === category.key ? 'primary.main' : 'white',
@@ -238,19 +238,19 @@ export default function Gallery() {
                   
                   <Stack direction="row" spacing={2} mb={2} flexWrap="wrap">
                     <Chip 
-                      label={img.location} 
+                      label={`${t('gallery.location')}: ${img.location}`} 
                       size="small" 
                       sx={{ bgcolor: 'grey.100' }}
                     />
                     <Chip 
-                      label={img.year} 
+                      label={`${t('gallery.year')}: ${img.year}`} 
                       size="small" 
                       sx={{ bgcolor: 'grey.100' }}
                     />
                     <Chip 
-                      label={img.area} 
+                      label={`${t('gallery.area')}: ${img.area}`} 
                       size="small" 
-                      sx={{ bgcolor: 'primary.main', color: 'black' }}
+                      sx={{ bgcolor: 'grey.100' }}
                     />
                   </Stack>
                   
@@ -267,112 +267,60 @@ export default function Gallery() {
           {filteredImages.length === 0 && (
             <Box textAlign="center" py={8}>
               <Typography variant="h5" color="text.secondary">
-                Проекты в данной категории не найдены
+                {t('gallery.noProjects')}
               </Typography>
             </Box>
           )}
         </Container>
       </Box>
 
-      {/* Stats Section */}
-      <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'grey.50' }}>
+      {/* Achievements Section */}
+      <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'white' }}>
         <Container maxWidth="lg">
-          <Box textAlign="center" mb={6}>
-            <Typography variant="h3" fontWeight={700} gutterBottom>
-              Наши достижения
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-              За годы работы мы реализовали множество успешных проектов
-            </Typography>
-          </Box>
-
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                50+
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Реализованных проектов
-              </Typography>
+          <Typography variant="h2" fontWeight={800} textAlign="center" gutterBottom>
+            {t('gallery.achievementsTitle')}
+          </Typography>
+          <Typography variant="h6" color="text.secondary" textAlign="center" mb={6}>
+            {t('gallery.achievementsDesc')}
+          </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={4} justifyContent="center" alignItems="center" mb={8}>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">50+</Typography>
+              <Typography variant="body1">{t('gallery.achievementsProjects')}</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                15
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Городов Казахстана
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">15</Typography>
+              <Typography variant="body1">{t('gallery.achievementsCities')}</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                100000+
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                м² общей площади
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">100000+</Typography>
+              <Typography variant="body1">{t('gallery.achievementsArea')}</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                98%
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Довольных клиентов
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">98%</Typography>
+              <Typography variant="body1">{t('gallery.achievementsClients')}</Typography>
             </Box>
           </Stack>
         </Container>
       </Box>
 
-      {/* CTA Section */}
+      {/* Join Gallery Section */}
       <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'primary.main' }}>
         <Container maxWidth="lg">
-          <Box textAlign="center">
-            <Typography variant="h3" fontWeight={700} gutterBottom color="black">
-              Хотите стать частью нашей галереи?
-            </Typography>
-            <Typography variant="h6" color="black" sx={{ mb: 4, opacity: 0.8 }}>
-              Свяжитесь с нами для обсуждения вашего проекта
-            </Typography>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
-              <Button
-                variant="contained"
-                size="large"
-                href="/how-to-rent"
-                sx={{ 
-                  bgcolor: 'black',
-                  color: 'white',
-                  px: 4,
-                  py: 2,
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  '&:hover': {
-                    bgcolor: '#333'
-                  }
-                }}
-              >
-                Оставить заявку
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                href="/contacts"
-                sx={{ 
-                  borderColor: 'black',
-                  color: 'black',
-                  px: 4,
-                  py: 2,
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  '&:hover': {
-                    borderColor: '#333',
-                    bgcolor: 'rgba(0,0,0,0.1)'
-                  }
-                }}
-              >
-                Связаться с нами
-              </Button>
-            </Stack>
-          </Box>
+          <Typography variant="h3" fontWeight={800} textAlign="center" gutterBottom color="black">
+            {t('gallery.joinTitle')}
+          </Typography>
+          <Typography variant="h6" color="black" textAlign="center" mb={4}>
+            {t('gallery.joinDesc')}
+          </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
+            <Button variant="contained" color="inherit" size="large" sx={{ fontWeight: 700 }}>
+              {t('gallery.joinBtn1')}
+            </Button>
+            <Button variant="outlined" color="inherit" size="large" sx={{ fontWeight: 700, borderColor: 'black', color: 'black' }}>
+              {t('gallery.joinBtn2')}
+            </Button>
+          </Stack>
         </Container>
       </Box>
     </Box>

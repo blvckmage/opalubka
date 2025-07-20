@@ -43,7 +43,7 @@ export default function Footer() {
                 maxWidth: 400
               }}
             >
-              Профессиональная аренда опалубки в Туркестане. Качественные материалы, быстрая доставка, техническая поддержка.
+              {t('footer.companyDesc')}
             </Typography>
             
             <Stack spacing={2}>
@@ -74,6 +74,24 @@ export default function Footer() {
                 </MuiLink>
               </Box>
             </Stack>
+            {/* Google Maps (заглушка) */}
+            <Box sx={{ mt: 4 }}>
+              <Typography variant="subtitle1" fontWeight={700} mb={1}>
+                Google Maps
+              </Typography>
+              <Box sx={{ width: '100%', height: 200, borderRadius: 2, overflow: 'hidden', mt: 1 }}>
+                <iframe
+                  src="https://www.google.com/maps?q=улица+Кожанова+57,+Туркестан&output=embed"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Карта"
+                />
+              </Box>
+            </Box>
           </Box>
 
           {/* Quick Links */}
@@ -152,6 +170,19 @@ export default function Footer() {
               >
                 {t('nav.gallery')}
               </MuiLink>
+              <MuiLink 
+                component={Link} 
+                href="/calculator" 
+                color="inherit" 
+                underline="hover"
+                sx={{ 
+                  fontWeight: 500,
+                  fontSize: '1rem',
+                  '&:hover': { opacity: 0.7 }
+                }}
+              >
+                {t('nav.calculator')}
+              </MuiLink>
             </Stack>
           </Box>
 
@@ -163,7 +194,7 @@ export default function Footer() {
               mb={3}
               sx={{ fontSize: '1.3rem' }}
             >
-              Связаться с нами
+              {t('footer.contactTitle')}
             </Typography>
             
             <Button
@@ -190,7 +221,7 @@ export default function Footer() {
             </Button>
             
             <Typography variant="body2" sx={{ mb: 2, opacity: 0.8 }}>
-              Следите за нами в социальных сетях:
+              {t('footer.socialTitle')}
             </Typography>
             
             <Stack direction="row" spacing={2}>
