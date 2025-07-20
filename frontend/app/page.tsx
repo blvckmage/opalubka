@@ -117,40 +117,24 @@ export default function Home() {
       </Box>
 
       {/* Statistics Section */}
-      <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: 'grey.50' }}>
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
         <Container maxWidth="lg">
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={4}>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                500+
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Проектов
-              </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={4} justifyContent="center" alignItems="center">
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">50+</Typography>
+              <Typography variant="body1">проектов</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                50+
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Клиентов
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">200+</Typography>
+              <Typography variant="body1">Клиентов</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                24/7
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Поддержка
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">24/7</Typography>
+              <Typography variant="body1">Поддержка</Typography>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'center' }}>
-              <Typography variant="h3" fontWeight={800} color="primary.main">
-                5 лет
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Опыта
-              </Typography>
+            <Box textAlign="center">
+              <Typography variant="h3" fontWeight={800} color="primary.main">3 года</Typography>
+              <Typography variant="body1">Опыта</Typography>
             </Box>
           </Stack>
         </Container>

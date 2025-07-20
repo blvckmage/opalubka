@@ -54,24 +54,24 @@ export default function Footer() {
               <Box display="flex" alignItems="center">
                 <PhoneIcon sx={{ mr: 2, color: 'black' }} />
                 <MuiLink 
-                  href="tel:+77001234567" 
+                  href="tel:+77789929013" 
+                  color="inherit" 
+                  underline="hover"
+                  sx={{ fontWeight: 600, fontSize: '1.1rem', mr: 2 }}
+                >
+                  +7 778 992 9013
+                </MuiLink>
+                <MuiLink 
+                  href="tel:+77770319013" 
                   color="inherit" 
                   underline="hover"
                   sx={{ fontWeight: 600, fontSize: '1.1rem' }}
                 >
-                  +7 700 123 45 67
+                  +7 777 031 9013
                 </MuiLink>
               </Box>
               <Box display="flex" alignItems="center">
                 <EmailIcon sx={{ mr: 2, color: 'black' }} />
-                <MuiLink 
-                  href="mailto:info@qalyp.kz" 
-                  color="inherit" 
-                  underline="hover"
-                  sx={{ fontWeight: 600 }}
-                >
-                  info@qalyp.kz
-                </MuiLink>
               </Box>
             </Stack>
             {/* Google Maps (заглушка) */}
@@ -81,7 +81,7 @@ export default function Footer() {
               </Typography>
               <Box sx={{ width: '100%', height: 200, borderRadius: 2, overflow: 'hidden', mt: 1 }}>
                 <iframe
-                  src="https://www.google.com/maps?q=улица+Кожанова+57,+Туркестан&output=embed"
+                  src="https://www.google.com/maps?q=132-я+улица+2,+Туркестан,+Казахстан&output=embed"
                   width="100%"
                   height="200"
                   style={{ border: 0 }}
@@ -200,7 +200,29 @@ export default function Footer() {
             <Button
               variant="contained"
               startIcon={<WhatsAppIcon />}
-              href="https://wa.me/77001234567"
+              href="https://wa.me/+77789929013"
+              target="_blank"
+              rel="noopener"
+              sx={{ 
+                bgcolor: 'black',
+                color: 'white',
+                fontWeight: 600,
+                textTransform: 'none',
+                px: 3,
+                py: 1.5,
+                borderRadius: 2,
+                mb: 1,
+                '&:hover': {
+                  bgcolor: '#333'
+                }
+              }}
+            >
+              WhatsApp 1
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={<WhatsAppIcon />}
+              href="https://wa.me/+77770319013"
               target="_blank"
               rel="noopener"
               sx={{ 
@@ -217,7 +239,7 @@ export default function Footer() {
                 }
               }}
             >
-              WhatsApp
+              WhatsApp 2
             </Button>
             
             <Typography variant="body2" sx={{ mb: 2, opacity: 0.8 }}>
@@ -231,10 +253,11 @@ export default function Footer() {
                   color: 'white',
                   '&:hover': { bgcolor: '#333' }
                 }}
-                href="https://wa.me/77001234567" 
+                href="https://www.tiktok.com/@salhan.anarbayev?_t=ZM-8yBoagZT1jK&_r=1"
                 target="_blank"
+                rel="noopener"
               >
-                <WhatsAppIcon />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 3V16.5C16.5 18.9853 14.4853 21 12 21C9.51472 21 7.5 18.9853 7.5 16.5C7.5 14.0147 9.51472 12 12 12C13.3807 12 14.5 13.1193 14.5 14.5C14.5 15.8807 13.3807 17 12 17C10.6193 17 9.5 15.8807 9.5 14.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M16.5 3C17.3284 3 18 3.67157 18 4.5C18 5.32843 17.3284 6 16.5 6C15.6716 6 15 5.32843 15 4.5C15 3.67157 15.6716 3 16.5 3Z" fill="currentColor"/></svg>
               </IconButton>
               <IconButton 
                 sx={{ 
@@ -242,21 +265,11 @@ export default function Footer() {
                   color: 'white',
                   '&:hover': { bgcolor: '#333' }
                 }}
-                href="https://instagram.com/qalyp" 
+                href="https://www.instagram.com/opalubka_turkestan?igsh=MTl6dG00MmRmemV0dA%3D%3D&utm_source=qr"
                 target="_blank"
+                rel="noopener"
               >
                 <InstagramIcon />
-              </IconButton>
-              <IconButton 
-                sx={{ 
-                  bgcolor: 'black',
-                  color: 'white',
-                  '&:hover': { bgcolor: '#333' }
-                }}
-                href="https://t.me/qalyp" 
-                target="_blank"
-              >
-                <TelegramIcon />
               </IconButton>
             </Stack>
           </Box>
